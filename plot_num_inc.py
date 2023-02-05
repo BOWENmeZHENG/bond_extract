@@ -36,13 +36,13 @@ def get_mean_std(all_results):
 
 def plot_results(all_results_mean_std):
     plt.figure(figsize=(10, 8))
-    plt.text(0, 1.46, r'$\sigma=5.0 \rm \, \AA$', fontsize=20)
+    plt.text(0, 1.465, r'$N_{\rm flake}=400,  \, \sigma=5.0 \rm \, \AA$', fontsize=20)
     for prop, data in all_results_mean_std.items():
         plt.errorbar(x=data[:, 0], y=data[:, 1], yerr=data[:, 2], label=rf'$N_{{\rm inc}} = {prop}$',
                 linewidth=2, capsize=6, elinewidth=2, markeredgewidth=2, fmt="-o", markersize=6)
     plt.xlabel(r"$N \rm _{cycle}$", fontsize=20)
     plt.ylabel(r'$N \rm _{bond/atom}$', fontsize=20)
-    plt.ylim(top=1.47)
+    plt.ylim(top=1.48)
     plt.xticks(fontsize=18)
     plt.yticks(fontsize=18)
     plt.legend(fontsize=18, frameon=False, loc='lower right')

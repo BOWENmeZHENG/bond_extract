@@ -26,12 +26,12 @@ for num_inc in num_incs:
     all_results[num_inc] = np.array(all_results[num_inc])
 
 plt.figure(figsize=(10, 8))
-plt.text(0, 1.46, r'$\sigma=15.0 \rm \, \AA$', fontsize=20)
+plt.text(0, 1.465, r'$N_{\rm flake}=400,  \, \sigma=15.0 \rm \, \AA$', fontsize=20)
 for prop, data in all_results.items():
     plt.plot(data[:, 0], data[:, 1], "-o", label=rf'$N_{{\rm inc}} = {prop}$', linewidth=2, markersize=6)
 plt.xlabel(r"$N \rm _{cycle}$", fontsize=20)
 plt.ylabel(r'$N \rm _{bond/atom}$', fontsize=20)
-plt.ylim(top=1.47)
+plt.ylim(top=1.48)
 plt.xticks(fontsize=18)
 plt.yticks(fontsize=18)
 plt.legend(fontsize=18, frameon=False, loc='lower right')

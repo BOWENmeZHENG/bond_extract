@@ -42,9 +42,10 @@ def plot_results(all_results_mean_std):
                 linewidth=2, capsize=6, elinewidth=2, markeredgewidth=2, fmt="-o", markersize=6)
     plt.xlabel(r"$N \rm _{cycle}$", fontsize=20)
     plt.ylabel(r'$N \rm _{bond/atom}$', fontsize=20)
+    plt.ylim(top=1.47)
     plt.xticks(fontsize=18)
     plt.yticks(fontsize=18)
-    plt.legend(fontsize=18, frameon=False)
+    plt.legend(fontsize=18, frameon=False, loc='lower right')
     plt.show()
 
 example_trj = f'analysis/num_inc/f_196_i_100_mi_1.0_s_12_sgm_5_cut_8_c_10_t_50000_at_2000/bond_per_atoms_selected.out'

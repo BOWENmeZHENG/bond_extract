@@ -36,14 +36,15 @@ def get_mean_std(all_results):
 
 def plot_results(all_results_mean_std):
     plt.figure(figsize=(10, 8))
+    plt.text(0, 1.46, r'$\sigma=5.0 \rm \, \AA$', fontsize=20)
     for prop, data in all_results_mean_std.items():
-        plt.errorbar(x=data[:, 0], y=data[:, 1], yerr=data[:, 2], label=f'{prop} inclusions',
+        plt.errorbar(x=data[:, 0], y=data[:, 1], yerr=data[:, 2], label=rf'$N_{{\rm inc}} = {prop}$',
                 linewidth=2, capsize=6, elinewidth=2, markeredgewidth=2, fmt="-o", markersize=6)
     plt.xlabel(r"$N \rm _{cycle}$", fontsize=20)
-    plt.ylabel('bond per atom', fontsize=20)
+    plt.ylabel(r'$N \rm _{bond/atom}$', fontsize=20)
     plt.xticks(fontsize=18)
     plt.yticks(fontsize=18)
-    plt.legend(fontsize=18)
+    plt.legend(fontsize=18, frameon=False)
     plt.show()
 
 example_trj = f'analysis/num_inc/f_196_i_100_mi_1.0_s_12_sgm_5_cut_8_c_10_t_50000_at_2000/bond_per_atoms_selected.out'

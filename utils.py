@@ -2,7 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def parse(trj_name, line_limit=5000000):
+def parse(trj_name, line_limit=10000000):
     steps = []
     box_sizes = {}
     xyz = {}

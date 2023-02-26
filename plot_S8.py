@@ -40,6 +40,9 @@ def plot_results(all_results_mean_std):
     for prop, data in all_results_mean_std.items():
         plt.errorbar(x=data[:, 0], y=data[:, 1], yerr=data[:, 2], label=rf'$\sigma={prop} \rm \, \AA$',
                 linewidth=2, capsize=6, elinewidth=2, markeredgewidth=2, fmt="-o", markersize=6)
+        np.savetxt(f'saved/S8/sigma_{prop}.x', data[:, 0])
+        np.savetxt(f'saved/S8/sigma_{prop}.y', data[:, 1])
+        np.savetxt(f'saved/S8/sigma_{prop}.yerr', data[:, 2])
     plt.xlabel(r"$N \rm _{cycle}$", fontsize=20)
     plt.ylabel(r'$N \rm _{bond/atom}$', fontsize=20)
     plt.ylim(top=1.48)
